@@ -1,0 +1,478 @@
+{
+  "variant": "stepper",
+  "title": "Create New Requisition",
+  "subtitle": "Provide the necessary details to initiate a new requisition request.",
+  "tabs": [
+    {
+      "id": "req_details",
+      "label": "Requisition Details",
+      "fields": [
+        {
+          "id": "requisitionName",
+          "type": "input",
+          "label": "Requisition Name",
+          "placeholder": "Enter the requisition name..",
+          "required": true
+        },
+        {
+          "id": "categoryType",
+          "type": "select",
+          "label": "Select Category",
+          "placeholder": "Select category (optional)..",
+          "required": false,
+          "options": [
+            {
+              "value": "Engine",
+              "label": "Engine"
+            },
+            {
+              "value": "Deck",
+              "label": "Deck"
+            },
+            {
+              "value": "Provisions",
+              "label": "Provisions"
+            },
+            {
+              "value": "Stores",
+              "label": "Stores"
+            },
+            {
+              "value": "Safety",
+              "label": "Safety"
+            },
+            {
+              "value": "Navigation",
+              "label": "Navigation"
+            },
+            {
+              "value": "Communication",
+              "label": "Communication"
+            },
+            {
+              "value": "Chemicals",
+              "label": "Chemicals"
+            },
+            {
+              "value": "Lubricants",
+              "label": "Lubricants"
+            },
+            {
+              "value": "Paints",
+              "label": "Paints"
+            }
+          ]
+        },
+        {
+          "id": "priorityType",
+          "type": "select",
+          "label": "Priority",
+          "placeholder": "Select priority..",
+          "required": true,
+          "options": [
+            {
+              "value": "Urgent",
+              "label": "Urgent"
+            },
+            {
+              "value": "High",
+              "label": "High"
+            },
+            {
+              "value": "Medium",
+              "label": "Medium"
+            },
+            {
+              "value": "Low",
+              "label": "Low"
+            }
+          ]
+        },
+        {
+          "id": "country",
+          "type": "select",
+          "label": "Select Country",
+          "placeholder": "Select country..",
+          "required": true,
+          "options": [
+            {
+              "value": "India",
+              "label": "🇮🇳 India"
+            },
+            {
+              "value": "Singapore",
+              "label": "🇸🇬 Singapore"
+            },
+            {
+              "value": "United Arab Emirates",
+              "label": "🇦🇪 United Arab Emirates"
+            },
+            {
+              "value": "United States",
+              "label": "🇺🇸 United States"
+            },
+            {
+              "value": "Netherlands",
+              "label": "🇳🇱 Netherlands"
+            },
+            {
+              "value": "China",
+              "label": "🇨🇳 China"
+            },
+            {
+              "value": "Japan",
+              "label": "🇯🇵 Japan"
+            },
+            {
+              "value": "South Korea",
+              "label": "🇰🇷 South Korea"
+            },
+            {
+              "value": "Turkey",
+              "label": "🇹🇷 Turkey"
+            },
+            {
+              "value": "Greece",
+              "label": "🇬🇷 Greece"
+            },
+            {
+              "value": "Germany",
+              "label": "🇩🇪 Germany"
+            },
+            {
+              "value": "United Kingdom",
+              "label": "🇬🇧 United Kingdom"
+            }
+          ]
+        },
+        {
+          "id": "port",
+          "type": "select",
+          "label": "Select Port",
+          "placeholder": "Select port..",
+          "required": true,
+          "dependsOn": "country",
+          "optionGroups": {
+            "India": [
+              {
+                "value": "Mumbai Port (JNPT)",
+                "label": "Mumbai Port (JNPT)"
+              },
+              {
+                "value": "Chennai Port",
+                "label": "Chennai Port"
+              },
+              {
+                "value": "Kandla Port",
+                "label": "Kandla Port"
+              },
+              {
+                "value": "Visakhapatnam Port",
+                "label": "Visakhapatnam Port"
+              },
+              {
+                "value": "Cochin Port",
+                "label": "Cochin Port"
+              },
+              {
+                "value": "Mundra Port",
+                "label": "Mundra Port"
+              },
+              {
+                "value": "Kolkata Port",
+                "label": "Kolkata Port"
+              },
+              {
+                "value": "New Mangalore Port",
+                "label": "New Mangalore Port"
+              },
+              {
+                "value": "Paradip Port",
+                "label": "Paradip Port"
+              },
+              {
+                "value": "Tuticorin Port",
+                "label": "Tuticorin Port"
+              }
+            ],
+            "Singapore": [
+              {
+                "value": "Singapore Port (PSA)",
+                "label": "Singapore Port (PSA)"
+              },
+              {
+                "value": "Jurong Port",
+                "label": "Jurong Port"
+              },
+              {
+                "value": "Sembawang Port",
+                "label": "Sembawang Port"
+              }
+            ],
+            "United Arab Emirates": [
+              {
+                "value": "Jebel Ali (Dubai)",
+                "label": "Jebel Ali (Dubai)"
+              },
+              {
+                "value": "Fujairah Port",
+                "label": "Fujairah Port"
+              },
+              {
+                "value": "Sharjah Port (Khalid)",
+                "label": "Sharjah Port (Khalid)"
+              },
+              {
+                "value": "Abu Dhabi Port (Khalifa)",
+                "label": "Abu Dhabi Port (Khalifa)"
+              },
+              {
+                "value": "Ras Al Khaimah Port",
+                "label": "Ras Al Khaimah Port"
+              }
+            ],
+            "United States": [
+              {
+                "value": "Miami Port",
+                "label": "Miami Port"
+              },
+              {
+                "value": "Houston Port",
+                "label": "Houston Port"
+              },
+              {
+                "value": "Los Angeles Port",
+                "label": "Los Angeles Port"
+              },
+              {
+                "value": "New York Port",
+                "label": "New York Port"
+              },
+              {
+                "value": "Long Beach Port",
+                "label": "Long Beach Port"
+              }
+            ],
+            "Netherlands": [
+              {
+                "value": "Rotterdam Port",
+                "label": "Rotterdam Port"
+              },
+              {
+                "value": "Amsterdam Port",
+                "label": "Amsterdam Port"
+              }
+            ],
+            "China": [
+              {
+                "value": "Shanghai Port",
+                "label": "Shanghai Port"
+              },
+              {
+                "value": "Shenzhen Port",
+                "label": "Shenzhen Port"
+              },
+              {
+                "value": "Ningbo Port",
+                "label": "Ningbo Port"
+              },
+              {
+                "value": "Guangzhou Port",
+                "label": "Guangzhou Port"
+              },
+              {
+                "value": "Qingdao Port",
+                "label": "Qingdao Port"
+              }
+            ],
+            "Japan": [
+              {
+                "value": "Tokyo Port",
+                "label": "Tokyo Port"
+              },
+              {
+                "value": "Yokohama Port",
+                "label": "Yokohama Port"
+              },
+              {
+                "value": "Kobe Port",
+                "label": "Kobe Port"
+              },
+              {
+                "value": "Osaka Port",
+                "label": "Osaka Port"
+              }
+            ],
+            "South Korea": [
+              {
+                "value": "Busan Port",
+                "label": "Busan Port"
+              },
+              {
+                "value": "Incheon Port",
+                "label": "Incheon Port"
+              }
+            ],
+            "Turkey": [
+              {
+                "value": "Istanbul Port (Ambarli)",
+                "label": "Istanbul Port (Ambarli)"
+              },
+              {
+                "value": "Mersin Port",
+                "label": "Mersin Port"
+              },
+              {
+                "value": "Izmir Port",
+                "label": "Izmir Port"
+              }
+            ],
+            "Greece": [
+              {
+                "value": "Piraeus Port",
+                "label": "Piraeus Port"
+              },
+              {
+                "value": "Thessaloniki Port",
+                "label": "Thessaloniki Port"
+              }
+            ],
+            "Germany": [
+              {
+                "value": "Hamburg Port",
+                "label": "Hamburg Port"
+              },
+              {
+                "value": "Bremerhaven Port",
+                "label": "Bremerhaven Port"
+              }
+            ],
+            "United Kingdom": [
+              {
+                "value": "Southampton Port",
+                "label": "Southampton Port"
+              },
+              {
+                "value": "Felixstowe Port",
+                "label": "Felixstowe Port"
+              },
+              {
+                "value": "London Gateway Port",
+                "label": "London Gateway Port"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "user_details",
+      "label": "User Details",
+      "fields": [
+        {
+          "id": "creatorName",
+          "type": "input",
+          "label": "Creator Name",
+          "placeholder": "Enter the creator name..",
+          "required": true
+        },
+        {
+          "id": "creatorRank",
+          "type": "select",
+          "label": "Select Creator Rank",
+          "placeholder": "Select creator rank..",
+          "required": true,
+          "options": [
+            {
+              "value": "Captain",
+              "label": "Captain"
+            },
+            {
+              "value": "Chief Engineer",
+              "label": "Chief Engineer"
+            },
+            {
+              "value": "First Officer",
+              "label": "First Officer"
+            },
+            {
+              "value": "Second Officer",
+              "label": "Second Officer"
+            },
+            {
+              "value": "Third Engineer",
+              "label": "Third Engineer"
+            },
+            {
+              "value": "Bosun",
+              "label": "Bosun"
+            }
+          ]
+        },
+        {
+          "id": "crewMembers",
+          "type": "input",
+          "label": "Number of Crew Members",
+          "placeholder": "Enter number of crew..",
+          "required": true
+        },
+        {
+          "id": "freshDateRange",
+          "type": "daterange",
+          "label": "Select Date Range",
+          "required": false
+        },
+        {
+          "id": "dryDateRange",
+          "type": "daterange",
+          "label": "Select Date Range",
+          "required": false
+        },
+        {
+          "id": "deliveryMode",
+          "type": "select",
+          "label": "Select Delivery Mode",
+          "placeholder": "Select delivery mode..",
+          "required": true,
+          "options": [
+            {
+              "value": "Port",
+              "label": "Port"
+            },
+            {
+              "value": "Ship",
+              "label": "Ship"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agent_details",
+      "label": "Agent Details",
+      "fields": [
+        {
+          "id": "agentName",
+          "type": "input",
+          "label": "Agent Name",
+          "placeholder": "Enter agent name..",
+          "required": true
+        },
+        {
+          "id": "agentEmail",
+          "type": "input",
+          "label": "Agent Email",
+          "placeholder": "Enter agent email..",
+          "required": true
+        },
+        {
+          "id": "agentPhone",
+          "type": "input",
+          "label": "Agent Phone Number",
+          "placeholder": "Enter agent phone..",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

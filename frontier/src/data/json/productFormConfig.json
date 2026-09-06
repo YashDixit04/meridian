@@ -1,0 +1,271 @@
+{
+  "productIdTypes": [
+    { "value": "UPC", "label": "UPC (Universal Product Code)" },
+    { "value": "EAN", "label": "EAN (European Article Number)" },
+    { "value": "GCID", "label": "GCID (Global Catalog Identifier)" },
+    { "value": "ISBN", "label": "ISBN (International Standard Book Number)" },
+    { "value": "ASIN", "label": "ASIN (Amazon Standard Identification Number)" }
+  ],
+  "vendorOptions": [
+  { "value": "vendor_001", "label": "Acme Supplies Co." },
+  { "value": "vendor_002", "label": "Global Trade Ltd." },
+  { "value": "vendor_003", "label": "FastShip Distributors" },
+  { "value": "vendor_004", "label": "Premium Goods Inc." },
+  { "value": "vendor_005", "label": "Local Craft Sellers" }
+],
+  "categories": [
+    { "value": "Marine Provisions", "label": "Marine Provisions" },
+    { "value": "Bond Store", "label": "Bond Store" },
+    { "value": "Marine Spares", "label": "Marine Spares" }
+  ],
+  "categoryHierarchy": {
+    "Marine Provisions": {
+      "Food & Grocery": [
+        "Dry Food",
+        "Frozen Food",
+        "Chilled Food",
+        "Fresh Vegetables",
+        "Fresh Fruits",
+        "Dairy Products",
+        "Meat & Poultry",
+        "Seafood",
+        "Bakery Items",
+        "Rice & Grains",
+        "Pulses & Lentils",
+        "Spices & Seasonings",
+        "Cooking Oil",
+        "Sauces & Condiments",
+        "Snacks",
+        "Breakfast Items",
+        "Canned Food",
+        "Instant Food",
+        "Noodles & Pasta",
+        "Baby Food"
+      ],
+      "Beverages": [
+        "Drinking Water",
+        "Soft Drinks",
+        "Juices",
+        "Tea",
+        "Coffee",
+        "Energy Drinks",
+        "Milk Beverages"
+      ],
+      "Galley Consumables": [
+        "Disposable Plates & Cups",
+        "Aluminium Foil",
+        "Cling Wrap",
+        "Tissue Papers",
+        "Garbage Bags",
+        "Food Storage Containers"
+      ],
+      "Cabin & Crew Consumables": [
+        "Toiletries",
+        "Soap & Shampoo",
+        "Laundry Supplies",
+        "Cleaning Chemicals",
+        "Air Fresheners"
+      ],
+      "Hygiene & Sanitation": [
+        "Hand Wash",
+        "Sanitizers",
+        "Disinfectants",
+        "Pest Control Items"
+      ]
+    },
+    "Bond Store": {
+      "Tobacco Products": [
+        "Cigarettes",
+        "Cigars",
+        "Tobacco Packs",
+        "Lighters"
+      ],
+      "Alcoholic Beverages": [
+        "Whisky",
+        "Rum",
+        "Vodka",
+        "Gin",
+        "Beer",
+        "Wine",
+        "Brandy"
+      ],
+      "Soft Beverages": [
+        "Soft Drinks",
+        "Energy Drinks",
+        "Premium Juices"
+      ],
+      "Confectionery": [
+        "Chocolates",
+        "Candies",
+        "Chewing Gum",
+        "Biscuits"
+      ],
+      "Personal Care": [
+        "Perfumes",
+        "Deodorants",
+        "Shaving Kits",
+        "Toothpaste",
+        "Toothbrushes"
+      ],
+      "Crew Welfare Items": [
+        "Playing Cards",
+        "Small Electronics",
+        "Phone Recharge Cards",
+        "Stationery"
+      ]
+    },
+    "Marine Spares": {
+      "Engine Spares": [
+        "Main Engine Spares",
+        "Auxiliary Engine Spares",
+        "Turbocharger Parts",
+        "Fuel Injection Parts",
+        "Cylinder Liners",
+        "Pistons & Rings",
+        "Bearings"
+      ],
+      "Electrical Spares": [
+        "Motors",
+        "Switches",
+        "Circuit Breakers",
+        "Cables & Wires",
+        "Sensors",
+        "Lighting Equipment",
+        "Batteries"
+      ],
+      "Pump & Valve Spares": [
+        "Pumps",
+        "Valve Kits",
+        "Mechanical Seals",
+        "Gaskets",
+        "Impellers"
+      ],
+      "Deck Spares": [
+        "Mooring Equipment",
+        "Winch Parts",
+        "Anchor Equipment",
+        "Shackles",
+        "Wire Ropes"
+      ],
+      "Navigation & Communication": [
+        "Radar Parts",
+        "GPS Equipment",
+        "VHF/UHF Equipment",
+        "Navigation Lights"
+      ],
+      "Safety Equipment Spares": [
+        "Fire Fighting Equipment",
+        "Lifeboat Spares",
+        "Breathing Apparatus Parts",
+        "Emergency Lighting"
+      ],
+      "Hydraulic & Pneumatic": [
+        "Hydraulic Pumps",
+        "Hydraulic Hoses",
+        "Pneumatic Cylinders",
+        "Compressors"
+      ],
+      "HVAC & Refrigeration": [
+        "Compressors",
+        "Cooling Fans",
+        "Refrigerant Gas",
+        "Thermostats",
+        "Filters"
+      ],
+      "Workshop & Tools": [
+        "Hand Tools",
+        "Power Tools",
+        "Measuring Instruments",
+        "Welding Equipment"
+      ],
+      "Pipe & Fittings": [
+        "Pipes",
+        "Flanges",
+        "Couplings",
+        "Elbows",
+        "Clamps"
+      ],
+      "Lubrication & Filtration": [
+        "Oil Filters",
+        "Fuel Filters",
+        "Lubricants",
+        "Grease"
+      ]
+    }
+  },
+  "variantOptions": [
+    { "value": "Size", "label": "Size" },
+    { "value": "Color", "label": "Color" },
+    { "value": "Material", "label": "Material" },
+    { "value": "Style", "label": "Style" },
+    { "value": "Pattern", "label": "Pattern" },
+    { "value": "Flavor", "label": "Flavor" },
+    { "value": "Scent", "label": "Scent" },
+    { "value": "Capacity", "label": "Capacity" }
+  ],
+  "dimensionTypes": [
+    { "key": "length", "label": "Length", "required": true },
+    { "key": "width", "label": "Width", "required": true },
+    { "key": "height", "label": "Height", "required": true },
+    { "key": "weight", "label": "Weight", "required": false },
+    { "key": "volume", "label": "Volume", "required": false }
+  ],
+  "lengthUnits": [
+    { "value": "Feet", "label": "Feet" },
+    { "value": "Inches", "label": "Inches" },
+    { "value": "Meters", "label": "Meters" },
+    { "value": "Centimeters", "label": "Centimeters" },
+    { "value": "Millimeters", "label": "Millimeters" }
+  ],
+  "weightUnits": [
+    { "value": "Pounds", "label": "Pounds (lb)" },
+    { "value": "Kilograms", "label": "Kilograms (kg)" },
+    { "value": "Ounces", "label": "Ounces (oz)" },
+    { "value": "Grams", "label": "Grams (g)" }
+  ],
+  "volumeUnits": [
+    { "value": "Liters", "label": "Liters (L)" },
+    { "value": "Milliliters", "label": "Milliliters (mL)" },
+    { "value": "Gallons", "label": "Gallons (gal)" },
+    { "value": "Fluid Ounces", "label": "Fluid Ounces (fl oz)" }
+  ],
+  "pricingColumns": [
+    { "key": "variant", "label": "Variant" },
+    { "key": "quantity", "label": "Quantity" },
+    { "key": "regularPrice", "label": "Regular pricing" },
+    { "key": "salePrice", "label": "Sale price" },
+    { "key": "includeTax", "label": "Include tax" },
+    { "key": "taxPercent", "label": "Tax (%)" }
+  ],
+  "inventoryColumns": [
+    { "key": "variant", "label": "Variant" },
+    { "key": "sku", "label": "SKU (Stock keeping unit)" },
+    { "key": "barcode", "label": "Barcode (ISBN, UPC, GTIN etc)" }
+  ],
+  "inventoryOptions": [
+    { "key": "trackQuantity", "label": "Track quantity" },
+    { "key": "continueSellingOutOfStock", "label": "Continue selling when out of stock" }
+  ],
+  "countryRegions": [
+    { "value": "US", "label": "United States" },
+    { "value": "GB", "label": "United Kingdom" },
+    { "value": "CA", "label": "Canada" },
+    { "value": "AU", "label": "Australia" },
+    { "value": "DE", "label": "Germany" },
+    { "value": "FR", "label": "France" },
+    { "value": "IN", "label": "India" },
+    { "value": "JP", "label": "Japan" },
+    { "value": "CN", "label": "China" },
+    { "value": "BR", "label": "Brazil" }
+  ],
+  "hsCodes": [
+    { "value": "8471", "label": "8471 - Computers & peripherals" },
+    { "value": "6109", "label": "6109 - T-shirts & vests" },
+    { "value": "6403", "label": "6403 - Footwear" },
+    { "value": "9503", "label": "9503 - Toys" },
+    { "value": "3304", "label": "3304 - Beauty & cosmetics" },
+    { "value": "8517", "label": "8517 - Phones & telecom" },
+    { "value": "9401", "label": "9401 - Seats & furniture" },
+    { "value": "6204", "label": "6204 - Women's suits & apparel" }
+  ]
+}

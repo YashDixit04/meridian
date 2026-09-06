@@ -1,0 +1,75 @@
+
+export const DASHBOARD_STATS = [
+  {
+    id: 'premium',
+    label: 'Premium Subscribers',
+    value: '2,410',
+    trend: '6.7%',
+    trendUp: true,
+    icon: 'Crown',
+    color: 'primary',
+  },
+  {
+    id: 'standard',
+    label: 'Standard Plan',
+    value: '8,920',
+    trend: '1.8%',
+    trendUp: true,
+    icon: 'Layers',
+    color: 'info',
+  }, 
+  {
+    id: 'expiring',
+    label: 'Expiring Soon',
+    value: '02',
+    trend: null,
+    icon: 'AlertCircle',
+    color: 'danger'
+  },
+  {
+    id: 'free',
+    label: 'Free Plan (MAU)',
+    value: '124,000',
+    trend: '12.3%',
+    trendUp: true,
+    icon: 'User',
+    color: 'muted',
+  },
+  {
+    id: 'trial-active',
+    label: 'Active Trials',
+    value: '1,940',
+    trend: null,
+    trendUp: null,
+    icon: 'Clock',
+    color: 'warning',
+  },
+  {
+    id: 'arr',
+    label: 'ARR',
+    value: '$1.84M',
+    trend: '+9.2%',
+    trendUp: true,
+    icon: 'DollarSign',
+    color: 'success',
+  },
+  {
+    id: 'renewal-rate',
+    label: 'Renewal Rate (90d)',
+    value: '89.7%',
+    trend: '+1.6%',
+    trendUp: true,
+    icon: 'Repeat',
+    color: 'success',
+  },
+  {
+    id: 'churn-revenue',
+    label: 'Revenue Churn (30d)',
+    value: '0.9%',
+    trend: null,
+    trendUp: true, // lower is better
+    icon: 'TrendingDown',
+    color: 'success',
+  },
+];
+

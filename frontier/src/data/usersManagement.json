@@ -1,0 +1,220 @@
+{
+  "users": [
+    {
+      "username": "superadmin",
+      "email": "superadmin@gmail.com",
+      "password": "123456",
+      "roleType": "superadmin",
+      "permissions": {
+        "pages": [
+          "dashboard",
+          "users",
+          "platformUsers",
+          "security",
+          "offers",
+          "finance",
+          "actions",
+          "integrations",
+          "userDetails",
+          "tenantDetails",
+          "help",
+          "tenantSubUsers",
+          "tenantVessels",
+          "tenantOrders",
+          "tenantCatalogue",
+          "addProduct",
+          "tenantDocuments",
+          "tenantActivityLogs",
+          "userManagement",
+          "cart"
+        ],
+        "fields": {
+          "all": [
+            "*"
+          ]
+        }
+      }
+    },
+    {
+      "username": "admin01",
+      "email": "admin@company.com",
+      "password": "admin123",
+      "roleType": "admin",
+      "permissions": {
+        "pages": [
+          "dashboard",
+          "users",
+          "platformUsers",
+          "offers",
+          "userDetails",
+          "tenantDetails",
+          "userManagement",
+          "tenantCatalogue",
+          "help",
+          "actions",
+          "tenantSubUsers",
+          "tenantVessels",
+          "tenantOrders",
+          "addProduct",
+          "tenantDocuments",
+          "tenantActivityLogs",
+          "addAccount"
+        ],
+        "fields": {
+          "tenantTable": [
+            "name",
+            "email",
+            "status",
+            "subscription",
+            "vessels",
+            "orders"
+          ],
+          "userTable": [
+            "name",
+            "email",
+            "role",
+            "status"
+          ],
+          "dashboard": [
+            "revenue",
+            "subscriptions",
+            "tenants",
+            "activeUsers"
+          ]
+        }
+      }
+    },
+    {
+      "username": "adminuser01",
+      "email": "adminuser@company.com",
+      "password": "admin123",
+      "roleType": "adminusers",
+      "permissions": {
+        "pages": [
+          "dashboard",
+          "users",
+          "tenantDetails",
+          "userDetails",
+          "help",
+          "tenantCatalogue"
+        ],
+        "fields": {
+          "tenantTable": [
+            "name",
+            "email",
+            "status",
+            "vessels"
+          ],
+          "dashboard": [
+            "tenants",
+            "activeUsers"
+          ]
+        }
+      }
+    },
+    {
+      "username": "tenantadmin01",
+      "email": "tenantadmin@msc.com",
+      "password": "tenant123",
+      "roleType": "tenantadmin",
+      "permissions": {
+        "pages": [
+          "dashboard",
+          "tenantSubUsers",
+          "tenantVessels",
+          "tenantOrders",
+          "tenantCatalogue",
+          "userDetails",
+          "tenantDocuments",
+          "tenantActivityLogs"
+        ],
+        "fields": {
+          "vesselTable": [
+            "name",
+            "type",
+            "capacity",
+            "status"
+          ],
+          "orderTable": [
+            "orderId",
+            "date",
+            "status",
+            "amount"
+          ],
+          "catalogueTable": [
+            "productName",
+            "category",
+            "price",
+            "stock"
+          ],
+          "subUsersTable": [
+            "name",
+            "email",
+            "role"
+          ]
+        }
+      }
+    },
+    {
+      "username": "captain01",
+      "email": "captain@msc.com",
+      "password": "captain123",
+      "roleType": "tenantadmin_subusers",
+      "permissions": {
+        "pages": [
+          "dashboard",
+          "tenantCatalogue",
+          "tenantOrders",
+          "userDetails",
+          "help",
+          "tenantActivityLogs",
+          "cart"
+        ],
+        "fields": {
+          "vesselTable": [
+            "name",
+            "type",
+            "status"
+          ],
+          "orderTable": [
+            "orderId",
+            "date",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "username": "purchaser01",
+      "email": "purchaser@msc.com",
+      "password": "purchaser123",
+      "roleType": "tenantadmin_subusers",
+      "permissions": {
+        "pages": [
+          "dashboard",
+          "tenantCatalogue",
+          "tenantOrders",
+          "userDetails",
+          "help",
+          "tenantActivityLogs",
+          "actions",
+          "cart"
+        ],
+        "fields": {
+          "orderTable": [
+            "orderId",
+            "date",
+            "status",
+            "amount"
+          ],
+          "catalogueTable": [
+            "productName",
+            "category",
+            "price",
+            "stock"
+          ]
+        }
+      }
+    }
+  ]
+}

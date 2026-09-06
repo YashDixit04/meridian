@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "Alice Smith",
+    "email": "alice@example.com",
+    "department": "Engineering",
+    "role": "Admin",
+    "userType": "Internal",
+    "avatar": "https://i.pravatar.cc/150?u=a1"
+  },
+  {
+    "id": "2",
+    "name": "Bob Jones",
+    "email": "bob@example.com",
+    "department": "Sales",
+    "role": "Manager",
+    "userType": "Internal",
+    "avatar": "https://i.pravatar.cc/150?u=a2"
+  },
+  {
+    "id": "3",
+    "name": "Charlie Brown",
+    "email": "charlie@example.com",
+    "department": "Engineering",
+    "role": "Developer",
+    "userType": "Internal",
+    "avatar": "https://i.pravatar.cc/150?u=a3"
+  },
+  {
+    "id": "4",
+    "name": "Diana Prince",
+    "email": "diana@example.com",
+    "department": "Marketing",
+    "role": "Editor",
+    "userType": "External",
+    "avatar": "https://i.pravatar.cc/150?u=a4"
+  },
+  {
+    "id": "5",
+    "name": "Evan Wright",
+    "email": "evan@example.com",
+    "department": "Sales",
+    "role": "Representative",
+    "userType": "Internal",
+    "avatar": "https://i.pravatar.cc/150?u=a5"
+  },
+  {
+    "id": "6",
+    "name": "Fiona Gallagher",
+    "email": "fiona@example.com",
+    "department": "HR",
+    "role": "Admin",
+    "userType": "Internal",
+    "avatar": "https://i.pravatar.cc/150?u=a6"
+  },
+  {
+    "id": "7",
+    "name": "George Martin",
+    "email": "george@example.com",
+    "department": "Engineering",
+    "role": "Developer",
+    "userType": "Contractor",
+    "avatar": "https://i.pravatar.cc/150?u=a7"
+  },
+  {
+    "id": "8",
+    "name": "Hannah Abbott",
+    "email": "hannah@example.com",
+    "department": "Marketing",
+    "role": "Manager",
+    "userType": "Internal",
+    "avatar": "https://i.pravatar.cc/150?u=a8"
+  }
+]

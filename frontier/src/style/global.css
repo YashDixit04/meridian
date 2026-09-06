@@ -1,0 +1,209 @@
+:root {
+  /* Primary */
+  --primary: #1379F0;
+  --primary-active: #086DE3;
+  --primary-accent: #0D4B94;
+  --primary-transparent: #1379F0;
+  --primary-soft: #E7F2FF;
+
+  /* Success */
+  --success: #0BC33F;
+  --success-active: #0B8B38;
+  --success-accent: #0B5C22;
+  --success-transparent: #0BC33F;
+  --success-soft: #E1FCE9;
+
+  /* Danger */
+  --danger: #ED143B;
+  --danger-active: #D80D31;
+  --danger-accent: #991930;
+  --danger-transparent: #ED143B;
+  --danger-soft: #FFEAEE;
+
+  /* Info */
+  --info: #4921EA;
+  --info-active: #3D17D4;
+  --info-accent: #271086;
+  --info-transparent: #4921EA;
+  --info-soft: #F0ECFF;
+
+  /* Warning */
+  --warning: #FEC524;
+  --warning-active: #F3B70F;
+  --warning-accent: #B88800;
+  --warning-transparent: #FEC524;
+  --warning-soft: #FFFAE9;
+
+  /* Dark (Text/Surface) */
+  --dark: #000000;
+  --dark-active: #1C1F26;
+  --dark-transparent: rgba(0, 0, 0, 0.3);
+  --dark-soft: #F6F6F6;
+
+  /* Light (Background/Surface) */
+  --light: #FFFFFF;
+  --light-active: #FAFAFA;
+  --light-transparent: #FFFFFF;
+  --light-soft: #FDFDFD;
+
+  /* Grey Scale */
+  --grey-50: #F9F9F9;
+  --grey-100: #F0F1F6;
+  --grey-200: #E2E4ED;
+  --grey-300: #DBDFE9;
+  --grey-400: #C9CEDA;
+  --grey-500: #A4ABBF;
+  --grey-600: #78829D;
+  --grey-700: #4B5675;
+  --grey-800: #27314B;
+  --grey-900: #111B37;
+  --grey-950: #030A1E;
+
+  /* Base Body */
+  --bg-body: #FFFFFF;
+  --text-body: #111B37;
+}
+
+.dark {
+  /* Primary */
+  --primary: #1379F0;
+  --primary-active: #2D8EFF;
+  --primary-accent: #1379F0;
+  /* Fallback as Accent is not in Dark mode spec */
+  --primary-transparent: #1379F0;
+  --primary-soft: #0A1726;
+
+  /* Success */
+  --success: #0BC33F;
+  --success-active: #24DB58;
+  --success-accent: #0BC33F;
+  /* Fallback */
+  --success-transparent: #0BC33F;
+  --success-soft: #0A2412;
+
+  /* Danger */
+  --danger: #ED143B;
+  --danger-active: #FF2F54;
+  --danger-accent: #ED143B;
+  /* Fallback */
+  --danger-transparent: #ED143B;
+  --danger-soft: #2B0D13;
+
+  /* Info */
+  --info: #521AF2;
+  --info-active: #6129FF;
+  --info-accent: #521AF2;
+  /* Fallback */
+  --info-transparent: #7241FF;
+  --info-soft: #1A0E3D;
+
+  /* Warning */
+  --warning: #FEC524;
+  --warning-active: #FFD96C;
+  --warning-accent: #FEC524;
+  /* Fallback */
+  --warning-transparent: #FEC524;
+  --warning-soft: #282004;
+
+  /* Dark (Becomes White/Text Inverse in Dark Mode) */
+  --dark: #FFFFFF;
+  --dark-active: #DFDFDF;
+  --dark-transparent: #373737;
+  /* 30% visual equiv maybe? spec says 373737 30% in image text? actually hex is 373737 */
+  --dark-soft: #F9F9F9;
+
+  /* Light (Becomes Background Dark in Dark Mode) */
+  --light: #0A0A0D;
+  --light-active: #0E0E10;
+  --light-transparent: #0A0A0D;
+  --light-soft: #0F0F12;
+
+  /* Grey Scale (Inverted) */
+  --grey-50: #141419;
+  --grey-100: #1B1C22;
+  --grey-200: #26272F;
+  --grey-300: #363843;
+  --grey-400: #464852;
+  --grey-500: #636674;
+  --grey-600: #808290;
+  --grey-700: #9A9CAE;
+  --grey-800: #B5B7C8;
+  --grey-900: #DBDCE4;
+  --grey-950: #F5F5F5;
+
+  /* Base Body */
+  --bg-body: #0A0A0D;
+  --text-body: #FFFFFF;
+}
+
+.no-transitions,
+.no-transitions * {
+  transition: none !important;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar,
+.custom-scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track,
+.custom-scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb,
+.custom-scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--grey-300);
+  border-radius: 20px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb,
+.dark .custom-scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--grey-700);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Snackbar Animations */
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -10px);
+  }
+  80% {
+    transform: translate(-50%, 5px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-bounce-in-up {
+  animation: bounceInUp 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}

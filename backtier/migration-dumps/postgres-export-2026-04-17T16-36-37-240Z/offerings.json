@@ -1,0 +1,29 @@
+[
+  {
+    "id": "4aa01fb2-6c1e-41b6-afdc-8271a94cbedb",
+    "name": "Marine Engine Oil",
+    "price": 154.5,
+    "catalogId": "2b757dce-b67d-4e81-bc09-b5e339bd2ab9",
+    "vendorId": "dc08a6b1-2eb2-4d44-91d8-048e5286d157",
+    "createdAt": "2026-04-06T13:32:11.011Z",
+    "updatedAt": "2026-04-06T13:32:11.011Z"
+  },
+  {
+    "id": "2d6905ec-ea3b-43dd-b250-f9f81465536d",
+    "name": "Nautical Compass",
+    "price": 89.99,
+    "catalogId": "2b757dce-b67d-4e81-bc09-b5e339bd2ab9",
+    "vendorId": "dc08a6b1-2eb2-4d44-91d8-048e5286d157",
+    "createdAt": "2026-04-06T13:32:11.044Z",
+    "updatedAt": "2026-04-06T13:32:11.044Z"
+  },
+  {
+    "id": "f5d11f29-77e3-4cc1-8638-a42a8ae64abe",
+    "name": "Heavy Duty Mooring Rope",
+    "price": 345,
+    "catalogId": "2b757dce-b67d-4e81-bc09-b5e339bd2ab9",
+    "vendorId": "dc08a6b1-2eb2-4d44-91d8-048e5286d157",
+    "createdAt": "2026-04-06T13:32:11.057Z",
+    "updatedAt": "2026-04-06T13:32:11.057Z"
+  }
+]

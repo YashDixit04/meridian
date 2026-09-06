@@ -1,0 +1,46 @@
+{
+  "examples": [
+    {
+      "id": "basic",
+      "title": "Basic Example",
+      "description": "Simple draggable list with text items",
+      "items": [
+        { "id": "1", "title": "First Item", "content": "Drag me to reorder" },
+        { "id": "2", "title": "Second Item", "content": "I can be moved around" },
+        { "id": "3", "title": "Third Item", "content": "Reorder by dragging" }
+      ]
+    },
+    {
+      "id": "variants",
+      "title": "Product Variants",
+      "description": "Draggable list for product variant options",
+      "items": [
+        { "id": "1", "option": "Option 1", "type": "Size", "values": ["S", "M", "L", "XL"] },
+        { "id": "2", "option": "Option 2", "type": "Color", "values": ["Red", "Blue", "Green"] },
+        { "id": "3", "option": "Option 3", "type": "Material", "values": ["Cotton", "Polyester", "Silk"] }
+      ]
+    },
+    {
+      "id": "tasks",
+      "title": "Task List",
+      "description": "Prioritize tasks by dragging",
+      "items": [
+        { "id": "1", "task": "Complete product listing", "priority": "High", "status": "In Progress" },
+        { "id": "2", "task": "Upload product images", "priority": "Medium", "status": "Pending" },
+        { "id": "3", "task": "Set pricing tiers", "priority": "High", "status": "Pending" },
+        { "id": "4", "task": "Review compliance docs", "priority": "Low", "status": "Not Started" }
+      ]
+    },
+    {
+      "id": "features",
+      "title": "Feature Highlights",
+      "description": "Reorder product features by importance",
+      "items": [
+        { "id": "1", "feature": "Drag & Drop", "description": "Intuitive reordering interface" },
+        { "id": "2", "feature": "Remove Items", "description": "Click trash icon to delete" },
+        { "id": "3", "feature": "Visual Feedback", "description": "See changes in real-time" },
+        { "id": "4", "feature": "Keyboard Support", "description": "Accessible navigation" }
+      ]
+    }
+  ]
+}

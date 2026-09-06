@@ -1,0 +1,10 @@
+[
+  {
+    "id": "dc08a6b1-2eb2-4d44-91d8-048e5286d157",
+    "name": "Default Vendor",
+    "contactEmail": "vendor@example.com",
+    "tenantId": "a85ea004-a0b1-4e7b-9759-c1253b86309c",
+    "createdAt": "2026-04-06T13:32:10.954Z",
+    "updatedAt": "2026-04-06T13:32:10.954Z"
+  }
+]

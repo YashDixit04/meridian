@@ -1,0 +1,135 @@
+[
+  {
+    "id": "bab6ee84-a15e-430a-8aff-fe9496f8c39b",
+    "email": "superadmin@gmail.com",
+    "username": "superadmin",
+    "firstName": "Super",
+    "lastName": "Admin",
+    "role": "ADMIN",
+    "passwordHash": "$2b$10$cAYNTSPpExxxM0S6M4k5.uP3IgO06ffROKfhSvgEqEqdoeqgOuPIu",
+    "roleType": "superadmin",
+    "permissions": {
+      "pages": [
+        "dashboard",
+        "users",
+        "platformUsers",
+        "security",
+        "offers",
+        "finance",
+        "actions",
+        "integrations",
+        "userDetails",
+        "tenantDetails",
+        "help",
+        "tenantSubUsers",
+        "tenantVessels",
+        "tenantOrders",
+        "tenantCatalogue",
+        "addProduct",
+        "tenantDocuments",
+        "tenantActivityLogs",
+        "userManagement",
+        "cart"
+      ],
+      "fields": {
+        "all": [
+          "*"
+        ]
+      }
+    },
+    "tenantId": "a85ea004-a0b1-4e7b-9759-c1253b86309c",
+    "createdAt": "2026-04-05T17:28:39.695Z",
+    "updatedAt": "2026-04-05T17:28:39.695Z"
+  },
+  {
+    "id": "c89303a9-6eac-4f6a-be70-1e30ed6bf3a0",
+    "email": "admin@company.com",
+    "username": "admin01",
+    "firstName": "Platform",
+    "lastName": "Admin",
+    "role": "ADMIN",
+    "passwordHash": "$2b$10$T3xIwBe3nvR7dDfgAqALset4g6BHIdXqkL6nJVSWpqraTSDEACMY.",
+    "roleType": "admin",
+    "permissions": {
+      "pages": [
+        "dashboard",
+        "users",
+        "platformUsers",
+        "offers",
+        "userDetails",
+        "tenantDetails",
+        "userManagement",
+        "tenantCatalogue",
+        "help",
+        "actions",
+        "tenantSubUsers",
+        "tenantVessels",
+        "tenantOrders",
+        "addProduct",
+        "tenantDocuments",
+        "tenantActivityLogs",
+        "addAccount"
+      ],
+      "fields": {
+        "dashboard": [
+          "revenue",
+          "subscriptions",
+          "tenants",
+          "activeUsers"
+        ],
+        "userTable": [
+          "name",
+          "email",
+          "role",
+          "status"
+        ],
+        "tenantTable": [
+          "name",
+          "email",
+          "status",
+          "subscription",
+          "vessels",
+          "orders"
+        ]
+      }
+    },
+    "tenantId": "a85ea004-a0b1-4e7b-9759-c1253b86309c",
+    "createdAt": "2026-04-05T17:28:39.856Z",
+    "updatedAt": "2026-04-05T17:28:39.856Z"
+  },
+  {
+    "id": "85606573-387f-4de1-b842-5093591b1120",
+    "email": "adminuser@company.com",
+    "username": "adminuser01",
+    "firstName": "Admin",
+    "lastName": "User",
+    "role": "USER",
+    "passwordHash": "$2b$10$dT2rA2ZImnmArx6/8SUtlOopJIwoudNvCW5TIL0jOTwcugJsUc5k2",
+    "roleType": "adminusers",
+    "permissions": {
+      "pages": [
+        "dashboard",
+        "users",
+        "tenantDetails",
+        "userDetails",
+        "help",
+        "tenantCatalogue"
+      ],
+      "fields": {
+        "dashboard": [
+          "tenants",
+          "activeUsers"
+        ],
+        "tenantTable": [
+          "name",
+          "email",
+          "status",
+          "vessels"
+        ]
+      }
+    },
+    "tenantId": "a85ea004-a0b1-4e7b-9759-c1253b86309c",
+    "createdAt": "2026-04-05T17:28:39.996Z",
+    "updatedAt": "2026-04-05T17:28:39.996Z"
+  }
+]
