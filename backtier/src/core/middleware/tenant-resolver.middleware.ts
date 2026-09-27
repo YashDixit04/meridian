@@ -59,6 +59,11 @@ export class TenantResolverMiddleware implements NestMiddleware {
   ) {}
 
   async use(req: Request, _res: Response, next: NextFunction): Promise<void> {
+    if (req.method === 'OPTIONS') {
+      next();
+      return;
+    }
+
     try {
       const tenantId = this.resolveTenantId(req);
 
