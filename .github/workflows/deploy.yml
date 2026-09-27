@@ -1,59 +1,16 @@
-name: Monorepo CI/CD
+name: Deploy Frontend to Firebase
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'backtier/**'
       - 'frontier/**'
+      - '.github/workflows/**'
+  workflow_dispatch: # Allows manual trigger from the GitHub Actions tab
 
 jobs:
-  detect-changes:
-    runs-on: ubuntu-latest
-    outputs:
-      backend: ${{ steps.filter.outputs.backend }}
-      frontend: ${{ steps.filter.outputs.frontend }}
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Check for path changes
-        uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            backend:
-              - 'backtier/**'
-            frontend:
-              - 'frontier/**'
-
-  # Validates that backend TypeScript compiles cleanly (Render handles the actual deployment)
-  verify-backend:
-    needs: detect-changes
-    if: ${{ needs.detect-changes.outputs.backend == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-          cache-dependency-path: backtier/package-lock.json
-
-      - name: Test Build Backend
-        working-directory: ./backtier
-        run: |
-          npm ci
-          npm run build
-
-  # Builds and deploys frontend directly to Firebase Hosting
   deploy-frontend:
-    needs: detect-changes
-    if: ${{ needs.detect-changes.outputs.frontend == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -66,10 +23,8 @@ jobs:
           cache: 'npm'
           cache-dependency-path: frontier/package-lock.json
 
-      - name: Build Frontend
+      - name: Install and Build Frontend
         working-directory: ./frontier
-        env:
-          VITE_API_URL: https://<your-render-backend-url>.onrender.com
         run: |
           npm ci
           npm run build
