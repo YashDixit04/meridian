@@ -28,7 +28,8 @@ jobs:
             frontend:
               - 'frontier/**'
 
-  deploy-backend:
+  # Validates that backend TypeScript compiles cleanly (Render handles the actual deployment)
+  verify-backend:
     needs: detect-changes
     if: ${{ needs.detect-changes.outputs.backend == 'true' }}
     runs-on: ubuntu-latest
@@ -43,24 +44,17 @@ jobs:
           cache: 'npm'
           cache-dependency-path: backtier/package-lock.json
 
-      - name: Build Backend
+      - name: Test Build Backend
         working-directory: ./backtier
         run: |
           npm ci
           npm run build
 
-      - name: Trigger Render Deploy Hook
-        run: |
-          curl -fsSL "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
-
+  # Builds and deploys frontend directly to Firebase Hosting
   deploy-frontend:
     needs: detect-changes
     if: ${{ needs.detect-changes.outputs.frontend == 'true' }}
     runs-on: ubuntu-latest
-    permissions:
-      checks: write
-      contents: read
-      pull-requests: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -75,7 +69,7 @@ jobs:
       - name: Build Frontend
         working-directory: ./frontier
         env:
-          VITE_API_BASE_URL: https://meridian-h8ke.onrender.com
+          VITE_API_URL: https://<your-render-backend-url>.onrender.com
         run: |
           npm ci
           npm run build
@@ -84,7 +78,7 @@ jobs:
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MERIDIAN_PROJ }}'
-          projectId: meridian-proj
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          projectId: <your-firebase-project-id>
           channelId: live
           entryPoint: ./frontier
