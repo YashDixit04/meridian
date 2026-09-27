@@ -7,6 +7,7 @@ import { BreadcrumbLink } from '@/components/common/Breadcrub/dynamicbreadcrub';
 import Loader from '@/components/common/Loader';
 import Button from '@/components/ui/Button';
 import { ApiException } from '@/lib/apiClient';
+import { useDialog } from '@/context/DialogContext';
 import superadminCatalogueService, {
   SuperadminCatalogueProduct,
 } from '@/services/superadminCatalogueService';
@@ -112,6 +113,7 @@ const breadcrumbItems: BreadcrumbLink[] = [
 ];
 
 export default function SuperadminCataloguePage() {
+  const { confirm } = useDialog();
   const [products, setProducts] = useState<SuperadminCatalogueProduct[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
@@ -151,9 +153,10 @@ export default function SuperadminCataloguePage() {
   }, [loadProducts]);
 
   const handleDeleteProduct = async (product: SuperadminCatalogueProduct) => {
-    const confirmed = window.confirm(
-      'Delete this product from superadmin catalogue and cascade to all tenant mappings and tenant catalogues?',
-    );
+    const confirmed = await confirm({
+      title: 'Delete product',
+      message: 'Delete this product from superadmin catalogue and cascade to all tenant mappings and tenant catalogues?',
+    });
 
     if (!confirmed) {
       return;

@@ -21,6 +21,7 @@ import {
 import { authService } from '@/services/authService';
 
 import tenantService, { TenantUser } from '@/services/tenantService';
+import { useDialog } from '@/context/DialogContext';
 import {
     clonePermissionFields,
     isTenantRoleType,
@@ -152,6 +153,7 @@ const SubUsersPage: React.FC<{ tenantId?: string; onNavigate?: (tab: string) => 
     const [availableVessels, setAvailableVessels] = useState<Array<{ value: string; label: string }>>([]);
     const [departmentOptions, setDepartmentOptions] = useState<string[]>([]);
     const [quota, setQuota] = useState<{ limit: number; current: number; reached: boolean } | null>(null);
+    const { confirm } = useDialog();
 
     const session = authService.getSession();
     const tenantId = propTenantId || session?.tenantId || '';
@@ -386,7 +388,10 @@ const SubUsersPage: React.FC<{ tenantId?: string; onNavigate?: (tab: string) => 
             return;
         }
 
-        const confirmed = window.confirm(`Delete ${editingUser.name}? This action cannot be undone.`);
+        const confirmed = await confirm({
+            title: 'Delete user',
+            message: `Delete ${editingUser.name}? This action cannot be undone.`,
+        });
         if (!confirmed) {
             return;
         }

@@ -5,6 +5,15 @@
   --primary-accent: #0D4B94;
   --primary-transparent: #1379F0;
   --primary-soft: #E7F2FF;
+  --primary-channel: 19 121 240;
+
+  /* Secondary */
+  --secondary: #7C3AED;
+  --secondary-active: #6D28D9;
+  --secondary-accent: #4C1D95;
+  --secondary-transparent: #7C3AED;
+  --secondary-soft: #F3E8FF;
+  --secondary-channel: 124 58 237;
 
   /* Success */
   --success: #0BC33F;
@@ -67,11 +76,20 @@
 .dark {
   /* Primary */
   --primary: #1379F0;
+  --primary-channel: 19 121 240;
   --primary-active: #2D8EFF;
   --primary-accent: #1379F0;
   /* Fallback as Accent is not in Dark mode spec */
   --primary-transparent: #1379F0;
   --primary-soft: #0A1726;
+
+  /* Secondary */
+  --secondary: #8B5CF6;
+  --secondary-active: #A78BFA;
+  --secondary-accent: #8B5CF6;
+  --secondary-transparent: #8B5CF6;
+  --secondary-soft: #1A1033;
+  --secondary-channel: 139 92 246;
 
   /* Success */
   --success: #0BC33F;
@@ -180,10 +198,20 @@
   /* Firefox */
 }
 
+:root,
+[data-theme-transition="slow"] body,
+[data-theme-transition="slow"] nav,
+[data-theme-transition="slow"] button {
+  transition:
+    background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
   background-color: var(--bg-body);
   color: var(--text-body);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Snackbar Animations */

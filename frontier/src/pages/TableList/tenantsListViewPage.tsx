@@ -8,6 +8,7 @@ import TenantTable from '@/components/common/listfield/tenanttable';
 import TenantGrid from '@/components/common/table/gridtable';
 import PageLayout from '@/components/layout/PageLayout';
 import apiClient from '@/lib/apiClient';
+import { useDialog } from '@/context/DialogContext';
 
 const isRenderableImageSrc = (value: unknown): value is string => {
     return typeof value === 'string' && value.trim().length > 0 && !value.startsWith('blob:');
@@ -23,6 +24,7 @@ const toSlug = (value: string): string =>
 const Tenants: React.FC<{ onNavigate?: (tab: string) => void }> = ({ onNavigate }) => {
     const [tenants, setTenants] = useState<any[]>(TENANT_DATA); // fallback initially
     const [isLoading, setIsLoading] = useState(true);
+    const { confirm } = useDialog();
 
     useEffect(() => {
         const fetchTenants = async () => {
@@ -68,13 +70,19 @@ const Tenants: React.FC<{ onNavigate?: (tab: string) => void }> = ({ onNavigate 
 
     const handleDelete = async (e: React.MouseEvent, id: string) => {
         e.stopPropagation();
-        if (window.confirm('Are you sure you want to delete this tenant? This action cannot be undone.')) {
-            try {
-                await tenantService.deleteTenant(id);
-                setTenants(prev => prev.filter(t => t.id !== id));
-            } catch (err) {
-                console.error('Failed to delete tenant', err);
-            }
+        const confirmed = await confirm({
+            title: 'Delete tenant',
+            message: 'Are you sure you want to delete this tenant? This action cannot be undone.',
+        });
+        if (!confirmed) {
+            return;
+        }
+
+        try {
+            await tenantService.deleteTenant(id);
+            setTenants(prev => prev.filter(t => t.id !== id));
+        } catch (err) {
+            console.error('Failed to delete tenant', err);
         }
     };
 

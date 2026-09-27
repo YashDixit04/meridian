@@ -5,6 +5,7 @@ import { Column } from '@/components/common/table/table';
 import { ModalConfig } from '@/components/ui/GenericModal';
 import { Flag } from 'lucide-react';
 import reqConfig from '@/data/requisitionModalConfig.json';
+import { useDialog } from '@/context/DialogContext';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -186,6 +187,7 @@ export function useRequisitionOrderLogic(
   const [selectedStatus, setSelectedStatus] = useState<string>('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [requisitions, setRequisitions] = useState<RequisitionOrder[]>(MOCK_REQUISITIONS);
+  const { confirm } = useDialog();
 
   // ── Filter ────────────────────────────────────────────────────────────────
 
@@ -214,11 +216,12 @@ export function useRequisitionOrderLogic(
     console.log('Edit requisition:', row.id);
   };
 
-  const handleDelete = (row: RequisitionOrder, event: React.MouseEvent) => {
+  const handleDelete = async (row: RequisitionOrder, event: React.MouseEvent) => {
     event.stopPropagation();
-    const confirmed = window.confirm(
-      `Delete requisition "${row.requisitionName}"? This action cannot be undone.`,
-    );
+    const confirmed = await confirm({
+      title: 'Delete requisition',
+      message: `Delete requisition "${row.requisitionName}"? This action cannot be undone.`,
+    });
     if (!confirmed) return;
     setRequisitions((prev) => prev.filter((r) => r.id !== row.id));
   };
@@ -298,6 +301,7 @@ export function useRequisitionOrderLogic(
             </button>
             <button
               onClick={(e) => handleDelete(row, e)}
+              data-testid={`requisition-delete-${row.id}`}
               className="inline-flex items-center gap-1 rounded-md border border-danger/20 px-2 py-1 text-xs font-medium text-danger hover:bg-danger-soft transition-colors"
             >
               <Trash2 size={12} />

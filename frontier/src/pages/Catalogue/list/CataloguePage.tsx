@@ -20,6 +20,7 @@ import Snackbar from '@/components/ui/Snackbar';
 import { useCart } from '@/context/CartContext';
 import tenantService from '@/services/tenantService';
 import { ApiException } from '@/lib/apiClient';
+import { useDialog } from '@/context/DialogContext';
 import * as XLSX from 'xlsx';
 
 type TenantCatalogueMode = 'vendor-only' | 'both' | 'smc-only' | 'unknown';
@@ -115,6 +116,7 @@ interface CataloguePageProps {
 }
 
 const CataloguePage: React.FC<CataloguePageProps> = ({ onNavigate, tenantId: tenantIdFromRoute }) => {
+  const { confirm } = useDialog();
   const session = authService.getSession();
   const tenantId = tenantIdFromRoute || session?.tenantId;
   const isSpecialRole = session?.roleType === 'tenantadmin_subusers';
@@ -221,9 +223,10 @@ const CataloguePage: React.FC<CataloguePageProps> = ({ onNavigate, tenantId: ten
       return;
     }
 
-    const confirmed = window.confirm(
-      'Delete this product from this tenant catalogue? This removes mapping for this tenant only.',
-    );
+    const confirmed = await confirm({
+      title: 'Delete product',
+      message: 'Delete this product from this tenant catalogue? This removes mapping for this tenant only.',
+    });
 
     if (!confirmed) {
       return;

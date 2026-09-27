@@ -19,7 +19,7 @@ const ChartUI: React.FC<ChartUIProps> = ({ isDarkMode }) => {
     labels,
     datasets: [
       {
-        label: 'Shipskart',
+        label: 'Maridian',
         data: [20, 45, 30, 50, 40, 60, 50, 65, 55, 70, 60, 65],
         borderColor: COLORS.primary,
         backgroundColor: COLORS.primary,
@@ -32,7 +32,7 @@ const ChartUI: React.FC<ChartUIProps> = ({ isDarkMode }) => {
     labels,
     datasets: [
       {
-        label: 'Shipskart',
+        label: 'Maridian',
         data: [20, 40, 30, 50, 40, 60, 50, 70, 60, 50, 70, 60],
         borderColor: COLORS.primary,
         backgroundColor: COLORS.primary,
@@ -86,7 +86,7 @@ const ChartUI: React.FC<ChartUIProps> = ({ isDarkMode }) => {
       labels: shortLabels,
       datasets: [
           {
-              label: 'Shipskart',
+              label: 'Maridian',
               data: [40, 60, 55, 70, 60, 80, 75],
               backgroundColor: COLORS.primary,
           },
@@ -154,7 +154,7 @@ const ChartUI: React.FC<ChartUIProps> = ({ isDarkMode }) => {
 
   // --- PIE DATA ---
   const pieData = {
-      labels: ['Shipskart', 'Bundle', 'Nest', 'Other'],
+      labels: ['Maridian', 'Bundle', 'Nest', 'Other'],
       datasets: [
           {
               data: [40, 30, 20, 10],

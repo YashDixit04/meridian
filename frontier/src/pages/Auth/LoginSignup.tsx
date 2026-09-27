@@ -5,6 +5,7 @@ import { authService } from '../../services/authService';
 import { ApiException } from '@/lib/apiClient';
 import { Mail, Lock, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useDialog } from '@/context/DialogContext';
 
 interface LoginSignupProps {
   onLoginSuccess: () => void;
@@ -13,6 +14,7 @@ interface LoginSignupProps {
 
 const LoginSignup: React.FC<LoginSignupProps> = ({ onLoginSuccess, onRegisterVendor }) => {
   const navigate = useNavigate();
+  const { alert } = useDialog();
   const [isLogin, setIsLogin] = useState(true);
   const [loginAudience, setLoginAudience] = useState<'user' | 'vendor'>('user');
   const [formData, setFormData] = useState({
@@ -120,7 +122,11 @@ const LoginSignup: React.FC<LoginSignupProps> = ({ onLoginSuccess, onRegisterVen
 
       setIsLogin(true);
       setError('');
-      alert('Account created successfully! Please log in.');
+      await alert({
+        title: 'Account created',
+        message: 'Account created successfully! Please log in.',
+        tone: 'success',
+      });
       setFormData({ usernameOrEmail: '', username: '', email: '', password: '', confirmPassword: '' });
     } catch (err) {
       if (err instanceof ApiException) {
@@ -159,6 +165,7 @@ const LoginSignup: React.FC<LoginSignupProps> = ({ onLoginSuccess, onRegisterVen
         >
           {/* Header */}
           <div className="text-center mb-6">
+            <p className="mb-4 text-2xl font-semibold tracking-tight text-white">Maridian</p>
             <div className="mb-4 grid grid-cols-2 gap-2 rounded-xl bg-white/10 p-1">
               <button
                 type="button"

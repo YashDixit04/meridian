@@ -47,6 +47,7 @@ export interface ModalConfig {
   title: string;
   subtitle?: string;
   icon?: React.ReactNode;
+  testId?: string;
 
   // Basic Form
   fields?: ModalField[];
@@ -69,7 +70,8 @@ const GenericModal: React.FC<{ config: ModalConfig }> = ({ config }) => {
     icon,
     fields,
     tabs,
-    actions
+    actions,
+    testId,
   } = config;
 
   const [formData, setFormData] = useState<Record<string, any>>({});
@@ -251,7 +253,7 @@ const GenericModal: React.FC<{ config: ModalConfig }> = ({ config }) => {
   const currentCustomFooter = isTabsActive && tabs ? tabs[activeTabIdx].customFooterSection : null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center" data-testid={testId || 'generic-modal'}>
       {/* Background Overlay with 10px blur requirement */}
       <div
         className="absolute inset-0 bg-black/40 backdrop-blur-[4px] transition-opacity"
@@ -259,7 +261,12 @@ const GenericModal: React.FC<{ config: ModalConfig }> = ({ config }) => {
       />
 
       {/* Modal Dialog */}
-      <div className={`relative bg-white dark:bg-grey-100 border border-grey-100 dark:border-grey-400 rounded-2xl shadow-xl flex flex-col overflow-hidden max-h-[90vh] ${modalWrapperClass}`}>
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="app-dialog-title"
+        className={`relative bg-white dark:bg-grey-100 border border-grey-100 dark:border-grey-400 rounded-2xl shadow-xl flex flex-col overflow-hidden max-h-[90vh] ${modalWrapperClass}`}
+      >
 
         {/* Header Section */}
         <div className="flex justify-between items-start mb-4">
@@ -270,9 +277,11 @@ const GenericModal: React.FC<{ config: ModalConfig }> = ({ config }) => {
               </div>
             )}
             <div>
-              <Heading6 >
-                {title}
-              </Heading6>
+              <div id="app-dialog-title">
+                <Heading6>
+                  {title}
+                </Heading6>
+              </div>
               {subtitle && (
                 <BodySm className="text-grey-500 mt-1 dark:text-grey-600">
                   {subtitle}
@@ -355,6 +364,7 @@ const GenericModal: React.FC<{ config: ModalConfig }> = ({ config }) => {
                   color={action.color || 'primary'}
                   onClick={() => handleActionClick(action)}
                   className="flex-1 sm:flex-none"
+                  data-testid={`app-dialog-${action.id}`}
                 >
                   {action.label}
                 </Button>

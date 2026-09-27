@@ -11,6 +11,13 @@ window.tailwind.config = {
           transparent: 'var(--primary-transparent)',
           soft: 'var(--primary-soft)',
         },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          active: 'var(--secondary-active)',
+          accent: 'var(--secondary-accent)',
+          transparent: 'var(--secondary-transparent)',
+          soft: 'var(--secondary-soft)',
+        },
         success: {
           DEFAULT: 'var(--success)',
           active: 'var(--success-active)',

@@ -109,7 +109,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=1',
     },
     code: '#52134121',
@@ -124,7 +124,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=2',
     },
     code: '#52134121',
@@ -139,7 +139,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=3',
     },
     code: '#52134121',
@@ -154,7 +154,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=4',
     },
     code: '#52134121',
@@ -169,7 +169,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=5',
     },
     code: '#52134121',
@@ -184,7 +184,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=6',
     },
     code: '#52134121',
@@ -199,7 +199,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=7',
     },
     code: '#52134121',
@@ -214,7 +214,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=8',
     },
     code: '#52134121',
@@ -229,7 +229,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=9',
     },
     code: '#52134121',
@@ -244,7 +244,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=10',
     },
     code: '#52134121',
@@ -259,7 +259,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=11',
     },
     code: '#52134121',
@@ -274,7 +274,7 @@ export const TENANT_DATA: Tenant[] = [
     email: 'mscfalcon@gmail.com',
     createdBy: {
       name: 'Sushma',
-      email: 'Sushma21@shipskart.com',
+      email: 'Sushma21@maridian.com',
       avatar: 'https://i.pravatar.cc/150?u=12',
     },
     code: '#52134121',

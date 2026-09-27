@@ -5,6 +5,7 @@ import Input from '../ui/Input';
 import Avatar from '../ui/Avatar';
 import Button from '../ui/Button';
 import ProfileDropdown from '../common/ProfileDropdown';
+import ThemeToggler from '../../theme/ThemeToggler';
 import { useCart } from '../../context/CartContext';
 import { canAccessPage } from '../../utils/rbac';
 
@@ -27,13 +28,11 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode = false, toggleTheme = () =>
       <div className="max-w-[1920px] mx-auto px-4 h-full">
         <div className="flex items-center justify-between h-full gap-4">
 
-          {/* Left: Logo */}
+          {/* Left: Temporary brand mark */}
           <div className="flex-shrink-0 flex items-center cursor-pointer">
-            <img
-              src="/Shipskartlogo.png"
-              alt="Shipskart"
-              className="h-8 w-8 object-contain"
-            />
+            <span className="text-[17px] font-semibold tracking-tight text-grey-900 dark:text-white">
+              Maridian
+            </span>
           </div>
 
           {/* Center: Search Bar */}
@@ -75,6 +74,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode = false, toggleTheme = () =>
                 )}
               </div>
             )}
+
+            <ThemeToggler />
 
             {/* Notifications */}
             <div className="relative tour-step-notifications">

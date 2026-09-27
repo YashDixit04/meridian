@@ -8,6 +8,7 @@ import { ApiException } from '@/lib/apiClient';
 import { Calendar, ChevronDown, Hash, Pencil, Plus, Ship, Trash2, X } from 'lucide-react';
 import { authService } from '@/services/authService';
 import tenantService, { TenantVessel } from '@/services/tenantService';
+import { useDialog } from '@/context/DialogContext';
 
 interface VesselsPageProps {
     tenantId?: string;
@@ -51,6 +52,7 @@ const VesselsPage: React.FC<VesselsPageProps> = ({ tenantId: propTenantId, onNav
     const [editError, setEditError] = useState('');
     const [saving, setSaving] = useState(false);
 
+    const { confirm } = useDialog();
     const session = authService.getSession();
     const tenantId = propTenantId || session?.tenantId || '';
 
@@ -165,9 +167,10 @@ const VesselsPage: React.FC<VesselsPageProps> = ({ tenantId: propTenantId, onNav
             return;
         }
 
-        const confirmed = window.confirm(
-            `Delete vessel "${editingVessel.vesselName}"? This action cannot be undone.`,
-        );
+        const confirmed = await confirm({
+            title: 'Delete vessel',
+            message: `Delete vessel "${editingVessel.vesselName}"? This action cannot be undone.`,
+        });
         if (!confirmed) {
             return;
         }
