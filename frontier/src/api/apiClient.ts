@@ -1,7 +1,8 @@
 /**
  * API Client — Central HTTP layer for all backend calls.
  *
- * Base URL: http://localhost:3001 (NestJS backend)
+ * Base URL: VITE_API_BASE_URL in production (Render).
+ * Locally falls back to /api, which Vite proxies to http://127.0.0.1:3001.
  *
  * Features:
  * - Automatically attaches Authorization: Bearer <token>
@@ -10,7 +11,7 @@
  * - Handles token refresh on 401
  */
 
-const BASE_URL = '/api'; // Proxied by Vite to http://localhost:3001
+const BASE_URL = (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, '') || '/api';
 
 // ─── Token Management ───────────────────────────────────────────────────────
 const TOKEN_KEY = 'b2b_access_token';

@@ -9,15 +9,17 @@ import { ApiExceptionFilter } from './core/interceptors/api-exception.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Allow requests from the Vite frontend dev server
   app.enableCors({
     origin: [
+      'https://meridian-proj.web.app',
+      'https://meridian-proj.firebaseapp.com',
       'http://localhost:3000',
       'http://127.0.0.1:3000',
       'http://localhost:3002',
       'http://127.0.0.1:3002',
     ],
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'x-tenant-id'],
   });
 
   // Increase parser limits so profile-photo data URLs can be persisted.

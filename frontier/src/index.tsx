@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import './lib/firebase';
+import { ThemeProvider } from './hooks/useTheme';
+import { DialogProvider } from './context/DialogContext';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -12,7 +15,11 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ThemeProvider>
+        <DialogProvider>
+          <App />
+        </DialogProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

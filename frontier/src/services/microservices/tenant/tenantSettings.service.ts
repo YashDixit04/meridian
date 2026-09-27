@@ -2,7 +2,7 @@ import { apiClient as api } from '../../../lib/apiClient';
 import { TenantSettings } from './types';
 
 class TenantSettingsService {
-  private readonly baseUrl = '/api/tenants';
+  private readonly baseUrl = '/tenants';
 
   async getTenantSettings(tenantId: string): Promise<TenantSettings> {
     const response = await api.get<TenantSettings>(

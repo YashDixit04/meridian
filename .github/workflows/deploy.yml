@@ -1,0 +1,90 @@
+name: Monorepo CI/CD
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backtier/**'
+      - 'frontier/**'
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      backend: ${{ steps.filter.outputs.backend }}
+      frontend: ${{ steps.filter.outputs.frontend }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Check for path changes
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            backend:
+              - 'backtier/**'
+            frontend:
+              - 'frontier/**'
+
+  deploy-backend:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.backend == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: backtier/package-lock.json
+
+      - name: Build Backend
+        working-directory: ./backtier
+        run: |
+          npm ci
+          npm run build
+
+      - name: Trigger Render Deploy Hook
+        run: |
+          curl -fsSL "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+
+  deploy-frontend:
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.frontend == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: frontier/package-lock.json
+
+      - name: Build Frontend
+        working-directory: ./frontier
+        env:
+          VITE_API_BASE_URL: https://meridian-h8ke.onrender.com
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MERIDIAN_PROJ }}'
+          projectId: meridian-proj
+          channelId: live
+          entryPoint: ./frontier
