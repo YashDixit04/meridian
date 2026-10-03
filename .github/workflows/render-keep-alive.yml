@@ -1,0 +1,33 @@
+name: Keep Render Backend Awake
+
+on:
+  schedule:
+    # Runs every 10 minutes (cron syntax: minute hour day month day-of-week)
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # Allows triggering manually from the GitHub UI anytime
+
+jobs:
+  ping-render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Backend Health Check
+        run: |
+          TARGET_URL="${{ secrets.RENDER_BACKEND_URL }}"
+          if [ -z "$TARGET_URL" ]; then
+            TARGET_URL="https://meridian-h8ke.onrender.com"
+          fi
+          
+          echo "Pinging $TARGET_URL/health ..."
+          # curl with a 60-second timeout to allow Render container to cold boot if sleeping
+          STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 60 "$TARGET_URL/health" || echo "000")
+          
+          echo "Response code: $STATUS_CODE"
+          
+          if [ "$STATUS_CODE" -ge 200 ] && [ "$STATUS_CODE" -lt 400 ]; then
+            echo " Render backend is UP and HEALTHY!"
+          else
+            echo " Server took time to respond or returned $STATUS_CODE. Retrying fallback ping to root /..."
+            sleep 10
+            FALLBACK_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 60 "$TARGET_URL/" || echo "000")
+            echo "Fallback response code: $FALLBACK_CODE"
+          fi
